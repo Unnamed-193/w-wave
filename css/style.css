@@ -725,7 +725,7 @@ img {
 }
 
 .guests-list__btn {
-  padding: 10px 17px;
+  padding: 10px 0px;
   width: 160px;
 
   font-weight: 500;
