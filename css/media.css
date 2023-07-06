@@ -678,8 +678,8 @@
   }
 
   .guests-list__btn {
-    width: 160px;
-    padding: 7px 0;
+    width: 150px;
+    padding: 7px 12.5px;
   }
 
   .playlists {
