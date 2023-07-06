@@ -781,6 +781,7 @@
   }
 
   .adv__button {
+    width: 256px;
     padding: 12px 13px 12px 13px;
     font-size: 16px;
   }
