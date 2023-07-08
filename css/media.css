@@ -6,6 +6,11 @@
   .broadcasts__img {
     -o-object-fit: cover;
        object-fit: cover;
+       width: 100%;
+  }
+
+  .item__content {
+    max-width: 100%;
   }
 
   .hero-microphone::after {
@@ -236,7 +241,7 @@
 
 @media (max-width: 992px) {
   .container {
-    max-width: 540px;
+    max-width: 768px;
   }
 
   .header-nav__link, .header-table__link {
@@ -470,9 +475,15 @@
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
 @media (max-width: 576px) {
   .container {
-    max-width: 256px;
+    padding: 0 32px;
   }
 
   .header__wrapper {
@@ -543,11 +554,21 @@
     margin-bottom: 20px;
   }
 
-  .podcasts-list__link {
+  .podcasts-list__item {
+    display: block;
+  }
+
+  .podcasts-list__article {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .podcasts-list__img {
+    max-width: none;
+    width: 100%;
+    height: 100%;
   }
 
   .podcasts-list__text {
@@ -583,10 +604,6 @@
   .broadcasts__list {
     margin-top: 0;
     padding-bottom: 37px;
-  }
-
-  .broadcasts__item {
-    height: 149px;
   }
 
   .item__content {
@@ -679,7 +696,7 @@
 
   .guests-list__btn {
     width: 150px;
-    padding: 7px 0;
+    padding: 7px 12.5px;
   }
 
   .playlists {
@@ -704,7 +721,7 @@
 
   .playlists__card-content {
     padding: 10px;
-    width: 113px;
+    width: 100%;
     height: 46px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -745,15 +762,16 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    left: 32px;
     width: 62px;
     height: 62px;
     background: url("../img/adv/new-320.svg") no-repeat;
     z-index: 1;
   }
 
+
   .adv__content {
-    width: 256px;
+    max-width: 100%;
   }
 
   .adv__title {
@@ -781,8 +799,7 @@
   }
 
   .adv__button {
-    width: 256px;
-    padding: 12px 13px 12px 13px;
+    padding: 12px 13.5px 12px 13.5px;
     font-size: 16px;
   }
 
@@ -810,6 +827,7 @@
   }
 
   .about__img {
+    width: 100%;
     margin-bottom: 8px;
   }
 
@@ -925,10 +943,11 @@
   .footer-nav__item {
     position: relative;
     z-index: 1;
+    width: calc((100% / 2) - (190px * 1) / 2);
   }
 
   .footer-nav__list {
-    gap: 18px 145px;
+    gap: 18px 111px;
   }
 
   .footer__author {
