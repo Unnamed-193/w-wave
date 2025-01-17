@@ -109,7 +109,8 @@ img {
 .site-btn {
   border: 0;
   outline: 0;
-  padding: 25px 54px;
+  width: 245px;
+height: 70px;
   background-color: var(--color-dark-purple);
   border-radius: 40px;
   color: var(--white-color);
@@ -124,7 +125,6 @@ img {
 
 .site-btn:focus-visible {
   background-color: var(--color-purple-blue);
-  padding: 23px 52px;
   border: 2px solid var(--color-deep-purple);
 }
 
@@ -161,6 +161,16 @@ img {
 .header {
   font-size: 0;
 }
+
+.header.fixed{
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 100;
+ }
 
 .container-header {
   max-width: 1110px;
@@ -317,7 +327,6 @@ img {
 .podcasts {
   background-color: var(--color-lavender);
   padding: 94px 0;
-  font-size: 0;
 }
 
 .podcasts__title {
@@ -335,9 +344,8 @@ img {
 }
 
 .podcasts-list__item {
-  display: flex;
+  font-size: 0;
   background-color: var(--white-color);
-  min-height: 140px;
   width: calc((100% - (var(--elements-podcasts) - 1) * var(--gap)) / (var(--elements-podcasts)));
 }
 
@@ -357,7 +365,6 @@ img {
 
 .podcasts-list__img {
   max-width: 112px;
-  height: 100%;
 }
 
 .podcasts-list__time {
@@ -456,7 +463,7 @@ img {
   outline: 0;
 }
 
-.broadcasts__item .broadcasts__img {
+.broadcasts__img {
   opacity: 1;
   -webkit-transition: opacity var(--animation-transition);
   -o-transition: opacity var(--animation-transition);
@@ -491,7 +498,7 @@ img {
 }
 
 .item__schedule {
-  margin-bottom: auto;
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
@@ -499,7 +506,6 @@ img {
 }
 
 .item__link {
-  margin-top: 20px;
   outline: 0;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -518,8 +524,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+ 
 }
 
 .item__arrow-path {
@@ -597,6 +602,7 @@ img {
   height: 89px;
   background: url("../img/broadcasts/mic.png") center no-repeat;
   background-size: contain;
+  margin-bottom: 24px;
 }
 
 .archive__description {
@@ -607,7 +613,6 @@ img {
 }
 
 .archive__btn {
-  margin-top: 24px;
   margin-bottom: 12px;
   padding: 10px 56px;
   width: 160px;
@@ -763,7 +768,7 @@ img {
 
 .playlists {
   padding: 94px 0;
-  font-size: 0;
+  
 }
 
 .playlists__container {
@@ -796,7 +801,6 @@ img {
 }
 
 .playlists__descr-year {
-  display: block;
   margin-bottom: 6px;
   font-style: italic;
   font-weight: 300;
@@ -806,12 +810,12 @@ img {
 }
 
 .playlists__descr-age-limit {
-  display: block;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
+  width: 30px;
+  height: 30px;
   padding: 6px 3.5px;
   font-family: 'Open Sans';
+  display: flex;
+  align-items: center;
   font-size: 12px;
   line-height: 16px;
   color: var(--grey-color);
@@ -847,11 +851,16 @@ img {
 
 .playlists__card-photo {
   position: relative;
+  font-size: 0;
 }
 
 .playlists__card-photo::before {
+  position: absolute;
   content: "";
   background: none;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
   -webkit-transition: background-color var(--animation-transition);
   -o-transition: background-color var(--animation-transition);
   transition: background-color var(--animation-transition);
@@ -880,6 +889,7 @@ img {
 }
 
 .playlists__card-content {
+  flex: 1;
   padding: 15px;
   border: 1px solid var(--color-lavender);
   -webkit-transition: background-color var(--animation-transition), border-color var(--animation-transition);
@@ -908,10 +918,8 @@ img {
 }
 
 .playlists__list-item:focus-visible .playlists__card-photo::before, .playlists__list-item:hover .playlists__card-photo::before, .playlists__list-item:active .playlists__card-photo::before{
-  position: absolute;
   z-index: 1;
-  height: 100%;
-  width: 100%;
+  
   background: rgba(18, 23, 35, 0.8);
 }
 
@@ -919,7 +927,10 @@ img {
   color: var(--color-black-blue);
 }
 
-.playlists__list-item:active .playlists__card-title, .playlists__list-item:hover .playlists__card-title, .playlists__list-item:active .playlists__card-descr, .playlists__list-item:hover .playlists__card-descr{
+.playlists__list-item:active .playlists__card-title,
+ .playlists__list-item:hover .playlists__card-title,
+  .playlists__list-item:active .playlists__card-descr,
+   .playlists__list-item:hover .playlists__card-descr{
   color: var(--white-color);
 }
 
@@ -947,15 +958,26 @@ img {
 }
 
 .adv__container {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+/* .adv__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 160px;
+  height: 160px;
+  background: url("../img/adv/new.svg") no-repeat;
+  z-index: 1;
+} */
+
 .adv__photo {
   padding-top: 8px;
-}
+  position: relative;
+} 
 
 .adv__photo::before {
   content: "";
@@ -1012,7 +1034,7 @@ img {
 }
 
 .adv__icon {
-  margin-right: 9px;
+  /* margin-right: 9px; */
 }
 
 .adv__button {
@@ -1025,6 +1047,7 @@ img {
   padding: 25px 9.5px 21px 11.5px;
   font-weight: 500;
   font-size: 20px;
+  gap: 9px;
   line-height: 100%;
   color: var(--color-pale-yellow);
 
@@ -1390,6 +1413,10 @@ img {
   -o-transition: color var(--animation-transition);
   transition: color var(--animation-transition);
 }
+/* 
+.form__input:invalid {
+  border-color: var(--color-red);
+} */
 
 .form__btn {
   margin-bottom: 26px;
@@ -1482,10 +1509,7 @@ img {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 90px;
-}
-
-.footer__left {
-  margin-right: auto;
+  justify-content: space-between;
 }
 
 .footer__logo {
@@ -1496,10 +1520,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.footer__item-social:not(:last-child) {
-  margin-right: 21px;
+  gap: 21px;
 }
 
 .footer__link-social {
@@ -1528,15 +1549,13 @@ img {
 .footer-nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  max-width: 445px;
-  gap: 17px 129px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 109px;
 }
 
 .footer-nav__item {
-  width: calc((100% / 3) - (131px * 2) / 3);
+  width: calc((100% / 3) - (129px * 2) / 3);
 }
 
 .footer-nav__link {
